@@ -14,7 +14,14 @@ import java.util.*
 open class SecurityConfiguration: WebSecurityConfigurerAdapter() {
 
   override fun configure(http: HttpSecurity) {
-    http.authorizeRequests().anyRequest().authenticated().and().formLogin().permitAll().and().logout().permitAll().and().csrf().disable()
+    http.authorizeRequests().anyRequest()
+      .authenticated()
+      .and()
+      .formLogin().permitAll()
+      .and()
+      .logout().permitAll()
+      .and()
+      .csrf().disable()
   }
 
 }
